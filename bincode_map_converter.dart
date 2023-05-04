@@ -12,22 +12,22 @@ import "dart:convert" as dart_convert;
 // ════════════════════════════════════════════════════════════════════════════
 
 String map_to_json(Map input) {
-    return dart_convert.jsonEncode(input);
+  return dart_convert.jsonEncode(input);
 }
 
 Map json_to_map(String input) {
-    return dart_convert.jsonDecode(input);
+  return dart_convert.jsonDecode(input);
 }
 
 // Define conversion: `String` <-> `List<int>`
 // ════════════════════════════════════════════════════════════════════════════
 
 List<int> string_to_binary(String input) {
-    return input.codeUnits;
+  return input.codeUnits;
 }
 
 String binary_to_string(List<int> input) {
-    return String.fromCharCodes(input);
+  return String.fromCharCodes(input);
 }
 
 // Define conversion: `Map` <-> `List<int>`
@@ -35,26 +35,26 @@ String binary_to_string(List<int> input) {
 // NOTE 3: This is built upon the two methods defined above.
 
 List<int> map_to_binary(Map input) {
-    return string_to_binary(map_to_json(input));
+  return string_to_binary(map_to_json(input));
 }
 
 Map binary_to_map(List<int> input) {
-    return json_to_map(binary_to_string(input));
+  return json_to_map(binary_to_string(input));
 }
 
-// Define main entry point.                                                   
+// Define main entry point.
 // ════════════════════════════════════════════════════════════════════════════
 // NOTE 4: The `main` function below is used for testing purposes only.
 //         When using this module in another project, it can be safely deleted.
 
 void main() {
-    // Define a map.
-    Map map = { "content": "If this is printed, the conversion works! :)" };
-    // Convert to binary.
-    List<int> serialized = map_to_binary(map);
-    print("\nSerialized:\n$serialized");
-    // Convert back to map.
-    Map deserialized = binary_to_map(serialized);
-    String content = deserialized["content"];
-    print("\nDeserialized:\n$content");
+  // Define a map.
+  Map map = {"content": "If this is printed, the conversion works! :)"};
+  // Convert to binary.
+  List<int> serialized = map_to_binary(map);
+  print("\nSerialized:\n$serialized");
+  // Convert back to map.
+  Map deserialized = binary_to_map(serialized);
+  String content = deserialized["content"];
+  print("\nDeserialized:\n$content");
 }

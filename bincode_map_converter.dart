@@ -45,7 +45,7 @@ Map binary_to_map(List<int> input) {
 // Define main entry point.
 // ════════════════════════════════════════════════════════════════════════════
 // NOTE 4: The `main` function below is used for testing purposes only.
-//         When using this module in another project, it can be safely deleted.
+//         When using this module in another project, it can safely be deleted.
 
 void main() {
   // Define a map.

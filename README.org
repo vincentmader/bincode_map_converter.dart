@@ -1,0 +1,9 @@
+#+title: Bincode Map Converter
+
+This is a dart module I wrote for facilitating the conversion of Dart `Map` objects to and from binary representation as `List<int>`.
+
+It can be (and is) used for e.g. sending & receiving Dart objects via TCP/UDP.
+
+For using it, all that needs to be done is defining a `.toMap()` method and a `.fromMap()` constructor for your Dart classes.
+
+The repository's name is lent from the awesome Rust crate [[https://docs.rs/bincode/latest/bincode/][bincode]].
